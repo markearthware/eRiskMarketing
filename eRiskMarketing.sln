@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingWebsite", "..\MarketingWebsite\MarketingWebsite.csproj", "{5C26E294-7051-443E-8E33-09C79F0710EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingWebsite", "MarketingWebsite\MarketingWebsite.csproj", "{5C26E294-7051-443E-8E33-09C79F0710EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
