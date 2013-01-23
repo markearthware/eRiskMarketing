@@ -69,7 +69,6 @@ C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.WebPages.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.WebPages.Razor.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\WebMatrix.Data.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\WebMatrix.WebData.dll
-C:\git\eRiskMarketing\MarketingWebsite\bin\EntityFramework.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\Newtonsoft.Json.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.Formatting.xml
@@ -85,12 +84,6 @@ C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.WebPages.Razor.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\WebMatrix.Data.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\Microsoft.Web.WebPages.OAuth.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\WebMatrix.WebData.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\DotNetOpenAuth.AspNet.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\DotNetOpenAuth.Core.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\DotNetOpenAuth.OAuth.Consumer.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\DotNetOpenAuth.OAuth.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\DotNetOpenAuth.OpenId.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\git\eRiskMarketing\MarketingWebsite\obj\Release\ResolveAssemblyReference.cache
 C:\git\eRiskMarketing\MarketingWebsite\obj\Release\MarketingWebsite.dll
 C:\git\eRiskMarketing\MarketingWebsite\obj\Release\MarketingWebsite.pdb

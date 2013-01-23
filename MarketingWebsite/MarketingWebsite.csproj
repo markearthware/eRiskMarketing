@@ -235,13 +235,17 @@
     <Content Include="Images\chart.png" />
     <Content Include="Images\close.png" />
     <Content Include="Images\cloud-v2.png" />
+    <Content Include="Images\cloud.png" />
     <Content Include="Images\cont_devices_v2.png" />
     <Content Include="Images\cont_ipad_v2.png" />
     <Content Include="Images\cont_library_v2.png" />
     <Content Include="Images\cont_phone_v2.png" />
     <Content Include="Images\cont_tablet_v2.png" />
     <Content Include="Images\cont_trending_v2.png" />
+    <Content Include="Images\crane.jpg" />
     <Content Include="Images\danger.png" />
+    <Content Include="Images\database.jpg" />
+    <Content Include="Images\email.jpg" />
     <Content Include="Images\folder.png" />
     <Content Include="Images\icon_devices.png" />
     <Content Include="Images\icon_library.png" />
@@ -249,8 +253,12 @@
     <Content Include="Images\ipad.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\phone.png" />
+    <Content Include="Images\phonescreen.PNG" />
+    <Content Include="Images\photo.PNG" />
     <Content Include="Images\shadow_bottom.png" />
+    <Content Include="Images\shadow_top.png" />
     <Content Include="Images\tablet.png" />
+    <Content Include="Images\tabscreen.PNG" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -266,7 +274,9 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

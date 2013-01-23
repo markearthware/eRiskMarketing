@@ -1,20 +1,58 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        anim1();
+        anim2();
+
+        function anim1(){
+            $(".animate").mouseover(
+                function(el, ev){
+                    $('.animate').unbind('mouseover');
+                    $('.img',ev).animate({
+                        top: '-270px',
+                    }, 5000, 
+                    function () { 
+                         anim1(); 
+                    });
+            }).mouseout(function(el,ev){
+                $('.img',ev).animate({
+                        top: '0px',
+                    }, 500, 
+                    function () {    
+                    });
+            });
+        }
+
+        function anim2(){
+            $(".animate2").mouseover(
+                function(el, ev){
+                    $('.animate2').unbind('mouseover');
+                    $('.img2',ev).animate({
+                        top: '-270px',
+                    }, 5000, 
+                    function () {   
+                        anim2();
+                    });
+            }).mouseout(function(el,ev){
+                $('.img2',ev).animate({
+                        top: '0px',
+                    }, 500, 
+                    function () {    
+                    });
+            });
+        }
+    });
+</script>
+
 <div class="mid">
     <div class="inner clearfix">
-        <div class="danger feat">
-            <img src="/Images/cont_library_v2.png" class="feat_image" alt="" />
-            <span class="lead">Risk assessments in situ</span>
-            <p>
-                Risk assessments are quite often carried out at a desk and significant
-                details are missed. With this application the assessment can be carried
-                out at the point of work more accurately, thereby minimising the chance of
-                overlooking vital hazards for the assessment.
-            </p>
-        </div>
         <div class="library feat">
-            <img src="/Images/cont_trending_v2.png" class="feat_image" alt="" />
+            <div class="animate">
+                <img src="/Images/database.jpg" class="feat_image img" alt="" />
+            </div>
             <span class="lead">Comprehensive database</span>
             <p>
                 eRisk is an intuitive risk assessment software application for mobile devices and tablets. 
@@ -23,8 +61,20 @@
                 assessments. A bespoke application for specialised industries can be
                 provided, please <a href="/ContactUs">contact us</a> for details.
         </div>
+         <div class="danger feat">
+            <img src="/Images/crane.jpg" class="feat_image" alt="" />
+            <span class="lead">Risk assessments in situ</span>
+            <p>
+                Risk assessments are quite often carried out at a desk and significant
+                details are missed. With this application the assessment can be carried
+                out at the point of work more accurately, thereby minimising the chance of
+                overlooking vital hazards for the assessment.
+            </p>
+        </div>
         <div class="cloud feat">
-            <img src="/Images/cont_devices_v2.png" class="feat_image" alt="" />
+            <div class="animate2">
+                <img src="/Images/email.jpg" class="feat_image img2" alt="" />
+            </div>
             <span class="lead">Email Service</span>
             <p>
                 eRisk stores completed assessments and offers the user the
