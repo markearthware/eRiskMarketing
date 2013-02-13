@@ -256,7 +256,6 @@ img.bg {
 }
 
 .logo-title, .old-logo-title {
-  color: #4D6AF7;
   font-family: 'Currents-Light-Sans';
   font-size: 30px;
   margin-top: 16px;
@@ -264,7 +263,46 @@ img.bg {
 }
 
 .logo-title {
-  color: #959595;
+  font-family: Arial;
+  text-shadow: 0 1px 1px #595959;
+  font-weight: bold;
+  color: #999999;
+  display: inline-block;
+  height: 50px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 27px;
+  line-height: 28px;
+}
+
+.animate
+{
+    position: relative;
+    height: 188px; 
+    width: 286px;
+    overflow:hidden;
+}
+
+.animate .img
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.animate2
+{
+    position: relative;
+    height: 188px; 
+    width: 286px;
+    overflow:hidden;
+}
+
+.animate2 .img2
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 .height > div
