@@ -15,6 +15,8 @@ namespace MarketingWebsite.Models
 
         public DateTime LastRenewalDate { get; set; }
 
+        public DateTime ExpiryDate { get; set; }
+
         public bool IsActive { get; set; }
 
         public virtual Company Company { get; set; }
