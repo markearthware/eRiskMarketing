@@ -19,6 +19,8 @@ namespace MarketingWebsite.Models
 
         public bool IsPublished { get; set; }
 
+        public bool IsExampleDatabase { get; set; }
+
         public virtual ICollection<SeverityDropDownItem> SeverityList { get; set; }
 
         public virtual ICollection<LikelihoodDropDownItem> LikelihoodList { get; set; }
