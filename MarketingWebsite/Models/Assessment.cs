@@ -2,6 +2,8 @@
 {
     public class Assessment
     {
+        public int AssessmentId { get; set; }
+
         public string Controls { get; set; }
 
         public string ExistingControls { get; set; }

@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using MarketingWebsite.Models.DatabaseContext;
+using System.Data.Entity;
 
 namespace MarketingWebsite
 {
@@ -23,6 +25,7 @@ namespace MarketingWebsite
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            Database.SetInitializer<EriskDatabase>(null);
         }
     }
 }

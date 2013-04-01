@@ -162,7 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="FormModels\ContactUsFormModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -170,6 +170,7 @@
     <Compile Include="Models\Assessment.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Control.cs" />
+    <Compile Include="Models\DatabaseContext\EriskDatabase.cs" />
     <Compile Include="Models\Subscription.cs" />
     <Compile Include="Models\SubscriptionTypes.cs" />
     <Compile Include="Models\Task.cs" />
@@ -304,6 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -319,6 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\eriskmarketing.pubxml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
