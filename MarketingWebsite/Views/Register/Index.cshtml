@@ -1,0 +1,43 @@
+﻿@model MarketingWebsite.Models.ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RegisterAndLogin.cshtml";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Index", "Register", new { returnUrl = Request.QueryString["returnUrl"] }, FormMethod.Post, new { @class = "register-form" }))
+{                                               
+    <fieldset>
+        <p>
+            @Html.LabelFor(x => x.FormModel.EmailAddress)
+            @Html.TextBoxFor(x => x.FormModel.EmailAddress)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.FormModel.Password)
+            @Html.PasswordFor(x => x.FormModel.Password)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.FormModel.PasswordConfirm)
+            @Html.PasswordFor(x => x.FormModel.PasswordConfirm)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.FormModel.CompanyName)
+            @Html.TextBoxFor(x => x.FormModel.CompanyName)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.FormModel.FirstName)
+            @Html.TextBoxFor(x => x.FormModel.FirstName)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.FormModel.Surname)
+            @Html.TextBoxFor(x => x.FormModel.Surname)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.FormModel.JobTitle)
+            @Html.TextBoxFor(x => x.FormModel.JobTitle)
+        </p>
+                
+        <input type="submit" value="Submit"/>
+    </fieldset>
+}

@@ -8,6 +8,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using MarketingWebsite.Models.DatabaseContext;
 using System.Data.Entity;
+using Castle.Windsor;
+using Castle.Windsor.Installer;
 
 namespace MarketingWebsite
 {
@@ -26,6 +28,22 @@ namespace MarketingWebsite
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
             Database.SetInitializer<EriskDatabase>(null);
+            BootstrapContainer();
+        }
+
+        private static IWindsorContainer container;
+
+        private static void BootstrapContainer()
+        {
+            container = new WindsorContainer()
+                .Install(FromAssembly.This());
+            var controllerFactory = new WindsorControllerFactory(container.Kernel);
+            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+        }
+
+        protected void Application_End()
+        {
+            container.Dispose();
         }
     }
 }

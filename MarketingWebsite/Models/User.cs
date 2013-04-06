@@ -15,7 +15,7 @@ namespace MarketingWebsite.Models
 
         public string JobTitle { get; set; }
 
-        public virtual ICollection<Task> Tasks {get; set;}
+        public virtual ICollection<Task> Tasks { get; set; }
 
         public virtual Database Database { get; set; }
 

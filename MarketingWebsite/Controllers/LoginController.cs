@@ -9,17 +9,8 @@ namespace MarketingWebsite.Controllers
 {
     public class LoginController : Controller
     {
-        //
-        // GET: /Login/
-
         public ActionResult Index()
         {
-            var dataAccessLayer = new EriskDatabase();
-
-            var users = dataAccessLayer.Users;
-
-            var newUsers = users.ToList();
-
             return View();
         }
 

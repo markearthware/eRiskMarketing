@@ -35,6 +35,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.2.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging">
+      <HintPath>..\packages\Castle.LoggingFacility.3.2.0\lib\net40\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration">
+      <HintPath>..\packages\Castle.Core-log4net.3.2.0\lib\net40\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.2.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -161,19 +176,26 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="CustomExceptions\CompanyExistsException.cs" />
+    <Compile Include="Enums\MembershipRoles.cs" />
     <Compile Include="FormModels\ContactUsFormModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Installers\LoggerInstaller.cs" />
+    <Compile Include="Installers\ControllersInstaller.cs" />
     <Compile Include="Models\Assessment.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Control.cs" />
     <Compile Include="Models\DatabaseContext\EriskDatabase.cs" />
+    <Compile Include="Models\FormModels\RegisterFormModel.cs" />
     <Compile Include="Models\Subscription.cs" />
     <Compile Include="Models\SubscriptionTypes.cs" />
     <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\ViewModels\RegisterViewModel.cs" />
     <Compile Include="Models\Who.cs" />
     <Compile Include="Models\Hazard.cs" />
     <Compile Include="Models\How.cs" />
@@ -181,9 +203,14 @@
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\SeverityDropDownItem.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Modules\SuppressFormsAuthenticationRedirectModule.cs" />
+    <Compile Include="Plumbing\WindsorControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\Interfaces\IAccountService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\LoginAndRegister.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -306,6 +333,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Filters\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -320,8 +348,10 @@
     <Content Include="Views\Home\ContactUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="log4net.config" />
     <None Include="Properties\PublishProfiles\eriskmarketing.pubxml" />
-    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_RegisterAndLogin.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
