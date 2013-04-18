@@ -51,13 +51,13 @@ namespace MarketingWebsite.Controllers
 
         private void SendEmail(ContactUsFormModel formModel)
         {
-            MailAddress to = new MailAddress("info@eriskapp.co.uk");
+            MailAddress to = new MailAddress("info@iriskassess.co.uk");
 
-            MailAddress from = new MailAddress("info@eriskapp.co.uk");
+            MailAddress from = new MailAddress("info@iriskassess.co.uk");
 
             MailMessage mail = new MailMessage(from, to);
 
-            mail.Subject = "Enquiry from customer - eRisk.co.uk website";
+            mail.Subject = "Enquiry from customer - iRiskAssess.co.uk website";
 
             mail.Body = "Email Address: " + formModel.EmailAddress + " Name: " + formModel.FullName + " Company: " + formModel.Company + " Message: " + formModel.Message;
 
