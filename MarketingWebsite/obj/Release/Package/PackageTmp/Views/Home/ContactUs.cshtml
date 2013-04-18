@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "ContactUs";
+}
+@model MarketingWebsite.FormModels.ContactUsFormModel
+
+<div class="mid">
+    <div class="inner clearfix height">
+       <div class="feat">
+            <h2>Contact Us</h2>
+             <hr />
+
+             @using(Html.BeginForm("ContactUs","Home"))
+             {
+                 <p>
+                 @Html.LabelFor(x=>x.FullName)
+                 @Html.TextBoxFor(x=>x.FullName)
+                 </p>
+                 
+                 <p>
+                 @Html.LabelFor(x => x.EmailAddress)
+                 @Html.TextBoxFor(x => x.EmailAddress)
+                 </p>
+                 
+                <p>
+                 @Html.LabelFor(x => x.Company)
+                 @Html.TextBoxFor(x => x.Company)
+                 </p>
+                 
+                <p>
+                 @Html.LabelFor(x => x.Message)
+                 @Html.TextAreaFor(x => x.Message)
+                 </p>
+                 <div class="do-it-now">
+                    <button type="submit">Send Message</button>
+                </div>
+             }
+
+             @if (ViewBag.SuccessMessage != null)
+             {
+                <p class="successMessage">
+                    @ViewBag.SuccessMessage
+                </p>
+             }
+       </div>
+    </div>
+</div>
