@@ -27,7 +27,8 @@ namespace MarketingWebsite.Services
                 
                 MembershipCreateStatus status;
                 // create membership user
-                var membershipUser = Membership.CreateUser(userId.ToString(), formModel.Password, formModel.EmailAddress, "", "", true, out status);
+                var membershipUser = Membership.CreateUser(userId.ToString(), formModel.Password, formModel.EmailAddress, "THING", "THING", true, out status);
+               
 
                 // add user to Company Admin Role
                 if (!Roles.RoleExists(selectedRole.ToString())){
@@ -65,6 +66,52 @@ namespace MarketingWebsite.Services
             else
             {
                 throw new CompanyExistsException();
+            }
+        }
+
+        public void LogUserIn(LoginFormModel formModel)
+        {
+            var username = Membership.GetUserNameByEmail(formModel.EmailAddress);
+            
+            if (username != null)
+            {
+                var isAuthenticated = Membership.ValidateUser(username, formModel.Password);
+
+                if (!isAuthenticated)
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    FormsAuthentication.SetAuthCookie(username, formModel.RememberMe);
+                }
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        public void LogUserIn(RegisterFormModel formModel)
+        {
+            var username = Membership.GetUserNameByEmail(formModel.EmailAddress);
+
+            if (username != null)
+            {
+                var isAuthenticated = Membership.ValidateUser(username, formModel.Password);
+
+                if (!isAuthenticated)
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    FormsAuthentication.SetAuthCookie(username, false);
+                }
+            }
+            else
+            {
+                throw new Exception();
             }
         }
     }

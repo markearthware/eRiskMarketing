@@ -14,5 +14,9 @@ namespace MarketingWebsite.Services.Interfaces
     public interface IAccountService
     {
         void CreateUser(RegisterFormModel formModel, MembershipRoles selectedRole);
+
+        void LogUserIn(LoginFormModel formModel);
+
+        void LogUserIn(RegisterFormModel formModel);
     }
 }

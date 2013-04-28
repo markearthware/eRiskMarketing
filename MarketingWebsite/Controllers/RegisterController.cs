@@ -27,19 +27,30 @@ namespace MarketingWebsite.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Index(RegisterFormModel formModel)
         {
+            var tempDataErrorMessage = string.Empty;
             if (this.ModelState.IsValid)
             {
                 try
                 {
                     this.accountService.CreateUser(formModel, MembershipRoles.CompanyAdministrator);
+                    this.accountService.LogUserIn(formModel);
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 catch (CompanyExistsException ex)
                 {
-
+                    tempDataErrorMessage = formModel.CompanyName + " has already been added into the system, contact your health and safety manager for login details";
+                }
+                catch (Exception ex)
+                {
+                    tempDataErrorMessage = "An error has occured, please try again";
                 }
             }
+
+            TempData["ErrorMessage"] = tempDataErrorMessage;
+
             return RedirectToAction("Index");
         }
     }
