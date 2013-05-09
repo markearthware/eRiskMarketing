@@ -20,6 +20,7 @@
                 <ul class="nav nav-pills" data-ng-controller="NavbarController">
                     <li data-ng-class="{'active':getClass('/customers')}"><a href="#/customers">Customers</a></li>
                     <li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders">Orders</a></li>
+                    <li data-ng-class="{'active':getClass('/users')}"><a href="#/users">Users</a></li>
                 </ul>
             </div>
         </div>
@@ -61,6 +62,7 @@
     <!-- App libs -->
     <script src="angular/app.js"></script>
     <script src="angular/controllers/controllers.js"></script>
+    <script src="angular/controllers/usersController.js"></script>
     <script src="angular/services/customersService.js"></script>
     <script src="angular/directives/animatedView.js"></script>
 </body>
