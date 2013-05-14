@@ -1,26 +1,27 @@
-﻿<div class="container">
+﻿<div class="view ng-scope">
+    <div class="container">
+        <div class="row-fluid">
+            <h3>Users</h3>
+        </div>
     
-    <div class="row-fluid">
-        <h4>Users</h4>
-    </div>
-    
-    <div class="row-fluid">
-        <table class="table table-condensed table-hover">
-            <thead>
-                <tr>
-                    <th class="span1">&nbsp;</th>
-                    <th class="span1">First name</th>
-                    <th class="span3">Surname</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="user in users">
-                    <td><a ng-click="viewUser(user.personId)"><i class="icon-edit"></i></a></td>
-                    <td>{{user.FirstName}}</td>
-                    <td>{{user.Surname}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="row-fluid">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th class="span1">&nbsp;</th>
+                        <th class="span1">First name</th>
+                        <th class="span3">Surname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in users">
+                        <td><a ng-click="viewUser(user.Id)"><i class="icon-edit"></i></a></td>
+                        <td>{{user.FirstName}}</td>
+                        <td>{{user.Surname}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
+    </div>
 </div>

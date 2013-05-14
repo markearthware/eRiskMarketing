@@ -2,12 +2,12 @@
     $scope.users = [];
     
     $scope.viewUser = function (id) {
-        $location.path("/userdetails/" + id);
+        $location.path("/userdetail/" + id);
     };
 
     $http({
         method: 'GET',
-        url: '/api/users'
+        url: 'api/users/'
     }).success(function (data, status, headers, config) {
         $scope.users = data;
     });

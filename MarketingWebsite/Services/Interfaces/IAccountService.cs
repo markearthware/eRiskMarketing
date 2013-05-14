@@ -8,6 +8,7 @@ using MarketingWebsite.Models.FormModels;
 using MarketingWebsite.Models.DatabaseContext;
 using MarketingWebsite.CustomExceptions;
 using MarketingWebsite.Enums;
+using System.Security.Principal;
 
 namespace MarketingWebsite.Services.Interfaces
 {
@@ -18,5 +19,7 @@ namespace MarketingWebsite.Services.Interfaces
         void LogUserIn(LoginFormModel formModel);
 
         void LogUserIn(RegisterFormModel formModel);
+        
+        IPrincipal LoggedInUser();
     }
 }

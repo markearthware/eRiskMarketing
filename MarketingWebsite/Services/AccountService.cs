@@ -9,6 +9,8 @@ using MarketingWebsite.Models.DatabaseContext;
 using MarketingWebsite.CustomExceptions;
 using MarketingWebsite.Enums;
 using MarketingWebsite.Services.Interfaces;
+using System.Web;
+using System.Security.Principal;
 
 namespace MarketingWebsite.Services
 {
@@ -113,6 +115,11 @@ namespace MarketingWebsite.Services
             {
                 throw new Exception();
             }
+        }
+
+        public IPrincipal LoggedInUser()
+        {
+            return HttpContext.Current.User;
         }
     }
 }

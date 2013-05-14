@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html data-ng-app="customersApp">
 <head>
-    <title>Customer Manager</title>
+    <title>Dashboard</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="Content/customerManagementStyles.css" rel="stylesheet" />
@@ -15,7 +15,7 @@
         <div class="navbar-inner">
             <div class="container">
                 <a class="brand " href="#/">
-                    <img src="Content/Images/people.png" alt="logo"> Customer Manager
+                    <img src="Content/Images/people.png" alt="logo"> Dashboard
                 </a>
                 <ul class="nav nav-pills" data-ng-controller="NavbarController">
                     <li data-ng-class="{'active':getClass('/customers')}"><a href="#/customers">Customers</a></li>
@@ -63,6 +63,7 @@
     <script src="angular/app.js"></script>
     <script src="angular/controllers/controllers.js"></script>
     <script src="angular/controllers/usersController.js"></script>
+    <script src="angular/controllers/userDetailsController.js"></script>
     <script src="angular/services/customersService.js"></script>
     <script src="angular/directives/animatedView.js"></script>
 </body>

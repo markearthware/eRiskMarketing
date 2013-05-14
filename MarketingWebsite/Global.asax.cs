@@ -10,6 +10,8 @@ using MarketingWebsite.Models.DatabaseContext;
 using System.Data.Entity;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
+using System.Web.Http.Dispatcher;
+using WebApiDependencyResolverSample.Windsor;
 
 namespace MarketingWebsite
 {
@@ -28,17 +30,28 @@ namespace MarketingWebsite
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
             Database.SetInitializer<EriskDatabase>(null);
-            BootstrapContainer();
+            BootstrapMvcContainer();
+            BootstrapWebApiContainer();
         }
 
         private static IWindsorContainer container;
 
-        private static void BootstrapContainer()
+        private static void BootstrapMvcContainer()
         {
             container = new WindsorContainer()
                 .Install(FromAssembly.This());
             var controllerFactory = new WindsorControllerFactory(container.Kernel);
             ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+
+        }
+
+        private static void BootstrapWebApiContainer()
+        {
+            var container = new WindsorContainer()
+                .Install(new WebWindsorInstaller());
+
+            GlobalConfiguration.Configuration.DependencyResolver =
+                new WindsorDependencyResolver(container);
         }
 
         protected void Application_End()
