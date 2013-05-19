@@ -94,6 +94,50 @@ namespace MarketingWebsite.Services
             }
         }
 
+        public bool IsUserAuthenticated(string emailAddress, string password)
+        {
+            var username = Membership.GetUserNameByEmail(emailAddress);
+            if (username != null)
+            {
+                return Membership.ValidateUser(username, password);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public MembershipUser GetUserById(Guid Id)
+        {
+            var users = Membership.GetAllUsers();
+            return users[Id.ToString()];
+        }
+
+        public bool ResetPassword(string oldPassword, string newPassword)
+        {
+            var user = Membership.GetUser();
+            user.ChangePassword(oldPassword, newPassword);
+            return true;
+        }
+
+        public bool ChangeEmailAddress(Guid userId, string newEmailAddress)
+        {
+            var user = this.GetUserById(userId);
+
+            var canResetEmailAddress = Membership.GetUserNameByEmail(newEmailAddress) == null;
+
+            if (canResetEmailAddress)
+            {
+                user.Email = newEmailAddress;
+                Membership.UpdateUser(user);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void LogUserIn(RegisterFormModel formModel)
         {
             var username = Membership.GetUserNameByEmail(formModel.EmailAddress);

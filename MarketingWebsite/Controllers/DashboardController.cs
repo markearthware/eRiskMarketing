@@ -10,6 +10,7 @@ namespace MarketingWebsite.Controllers
     {
         //
         // GET: /Dashboard/
+        [Authorize]
         [HttpGet]
         public ActionResult Index()
         {

@@ -87,3 +87,8 @@ footer {
 .close {
     opacity: 1.0;
 }
+
+.alert-container
+{
+    margin-left: 0px !important;
+}

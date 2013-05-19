@@ -9,13 +9,15 @@
                 <thead>
                     <tr>
                         <th class="span1">&nbsp;</th>
+                        <th class="span1">Email Address</th>
                         <th class="span1">First name</th>
-                        <th class="span3">Surname</th>
+                        <th class="span1">Surname</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="user in users">
                         <td><a ng-click="viewUser(user.Id)"><i class="icon-edit"></i></a></td>
+                        <td>{{user.EmailAddress}}</td>
                         <td>{{user.FirstName}}</td>
                         <td>{{user.Surname}}</td>
                     </tr>

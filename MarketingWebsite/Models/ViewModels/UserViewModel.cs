@@ -9,6 +9,8 @@ namespace MarketingWebsite.Models.ViewModels
     {
         public Guid Id { get; set; }
 
+        public string EmailAddress { get; set; }
+
         public string FirstName { get; set; }
 
         public string Surname { get; set; }

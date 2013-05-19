@@ -7,7 +7,7 @@
 
     $http({
         method: 'GET',
-        url: 'api/users/'
+        url: 'api/users/get/'
     }).success(function (data, status, headers, config) {
         $scope.users = data;
     });

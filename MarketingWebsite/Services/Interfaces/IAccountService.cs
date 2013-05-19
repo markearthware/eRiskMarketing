@@ -20,6 +20,14 @@ namespace MarketingWebsite.Services.Interfaces
 
         void LogUserIn(RegisterFormModel formModel);
         
+        bool IsUserAuthenticated(string emailAddress, string password);
+        
         IPrincipal LoggedInUser();
+
+        MembershipUser GetUserById(Guid Id);
+
+        bool ResetPassword(string oldPassword, string newPassword);
+
+        bool ChangeEmailAddress(Guid UserId, string newEmailAddress);
     }
 }

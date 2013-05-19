@@ -196,6 +196,7 @@
     <Compile Include="Models\DatabaseContext\EriskDatabase.cs" />
     <Compile Include="Models\FormModels\LoginFormModel.cs" />
     <Compile Include="Models\FormModels\RegisterFormModel.cs" />
+    <Compile Include="Models\FormModels\UserFormModel.cs" />
     <Compile Include="Models\Subscription.cs" />
     <Compile Include="Models\SubscriptionTypes.cs" />
     <Compile Include="Models\Task.cs" />
@@ -220,6 +221,7 @@
   <ItemGroup>
     <Content Include="angular\app.js" />
     <Content Include="angular\controllers\controllers.js" />
+    <Content Include="angular\controllers\rootController.js" />
     <Content Include="angular\controllers\userDetailsController.js" />
     <Content Include="angular\controllers\usersController.js" />
     <Content Include="angular\directives\animatedView.js" />
@@ -228,12 +230,13 @@
     <Content Include="angular\partials\orders.html" />
     <Content Include="angular\partials\ordersTable.html" />
     <Content Include="angular\partials\users.html" />
+    <Content Include="angular\services\alertService.js" />
     <Content Include="angular\services\customersService.js" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\customerManagementStyles.css" />
+    <Content Include="Content\dashboard-styles.css" />
     <Content Include="Content\images\angularShield.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
@@ -348,6 +351,11 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\ui-bootstrap-0.3.0.js" />
+    <Content Include="Scripts\ui-bootstrap-0.3.0.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.3.0.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.3.0.min.js" />
+    <Content Include="template\alert\alert.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

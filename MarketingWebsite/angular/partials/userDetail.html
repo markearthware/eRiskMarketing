@@ -6,18 +6,24 @@
         <form name="userForm" class="ng-cloak">
             <fieldset>
                 <div class="row-fluid">
+                    <div class="control-group">
+                        <label class="control-label" for="emailAddress">Email Address</label>
+                        <div class="controls row-fluid">
+                            <input required type="text" name="emailAddress" data-ng-model="user.EmailAddress" class="span8" />
+                        </div>
+                    </div>
 
                     <div class="control-group">
                         <label class="control-label" for="firstName">First Name</label>
                         <div class="controls row-fluid">
-                            <input type="text" name="firstName" data-ng-model="user.FirstName" class="span8" />
+                            <input required type="text" name="firstName" data-ng-model="user.FirstName" class="span8" />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label class="control-label" for="lastName">Last Name</label>
                         <div class="controls row-fluid">
-                            <input type="text" name="lastName" data-ng-model="user.Surname" class="span8" />
+                            <input required type="text" name="lastName" data-ng-model="user.Surname" class="span8" />
                         </div>
                     </div>
 
@@ -33,21 +39,21 @@
                         <div class="control-group">
                             <label class="control-label" for="oldPassword">Old Password</label>
                             <div class="controls row-fluid">
-                                <input type="text" name="oldPassword" data-ng-model="user.OldPassword" class="span8" />
+                                <input type="password" name="oldPassword" data-ng-model="user.OldPassword" class="span8" />
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" for="newPassword">New Password</label>
                             <div class="controls row-fluid">
-                                <input type="text" name="newPassword" data-ng-model="user.NewPassword" class="span8" />
+                                <input type="password" name="newPassword" data-ng-model="user.NewPassword" class="span8" />
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" for="confirmNewPassword">Confirm New Password</label>
                             <div class="controls row-fluid">
-                                <input type="text" name="confirmNewPassword" data-ng-model="user.NewPasswordConfirm" class="span8" />
+                                <input type="password" name="confirmNewPassword" data-ng-model="user.NewPasswordConfirm" class="span8" />
                             </div>
                         </div>
                     </div>
@@ -60,13 +66,16 @@
                         <div class="controls row-fluid">
                             <div class="span12">
                                 <button class="btn" data-ng-click="returnToList()"><i class="icon-remove-sign"></i> Return to List</button>
+                                <button type="submit" class="btn" data-ng-click="updateUser()"><i class="icon-ok"></i> Save</button>
                             </div>
                         </div>
                     </div>
-
+                    <div class="span12 alert-container">
+                        <alert class="alert" close="closeAlert($index)" ng-repeat="alert in alerts" type="alert.type">{{ alert.msg }}</alert>
+                    </div>
                 </div>
 
             </fieldset>
-        </form>        
+        </form>      
     </div>
 </div>

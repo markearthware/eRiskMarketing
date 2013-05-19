@@ -19,7 +19,7 @@
 
   #######################################################################*/
 
-var app = angular.module('customersApp', []);
+var app = angular.module('iriskApp', ['iriskApp.services', 'ui.bootstrap']);
 
 //This configures the routes and associates each route with a view and a controller
 app.config(function ($routeProvider) {
@@ -53,7 +53,7 @@ app.config(function ($routeProvider) {
                 controller: 'UserDetailsController',
                 templateUrl: '/angular/partials/userDetail.html'
             })
-        
+
         .otherwise({ redirectTo: '/customers' });
 });
 
