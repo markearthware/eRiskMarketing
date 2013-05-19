@@ -4,9 +4,8 @@
     init();
 
     function init() {
+        $scope.alerts = [];
     };
-
-    $scope.alerts = [];
 
     $scope.deleteAlerts = function (type, msg) {
         $scope.alerts = [];

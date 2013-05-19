@@ -16,6 +16,7 @@
     init();
 
     function init() {
+        $scope.deleteAlerts();
         $http({
             method: 'GET',
             url: 'api/users/get/' + $routeParams.id
