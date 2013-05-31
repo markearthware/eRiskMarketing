@@ -16,7 +16,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="user in users">
-                        <td><a ng-click="viewUser(user.Id)"><i class="icon-edit"></i></a></td>
+                        <td><a ng-show="loggedInUser.IsAdminUser" ng-click="viewUser(user.Id)"><i class="icon-edit"></i></a></td>
                         <td>{{user.EmailAddress}}</td>
                         <td>{{user.FirstName}}</td>
                         <td>{{user.Surname}}</td>

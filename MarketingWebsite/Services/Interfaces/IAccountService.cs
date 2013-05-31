@@ -31,5 +31,7 @@ namespace MarketingWebsite.Services.Interfaces
         string ResetUsersPassword(Guid userId);
 
         bool ChangeEmailAddress(Guid UserId, string newEmailAddress);
+
+        bool IsUserAdministrator();
     }
 }

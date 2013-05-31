@@ -15,6 +15,7 @@ namespace MarketingWebsite.Api
     using MarketingWebsite.Models.FormModels;
     using MarketingWebsite.Services;
     using MarketingWebsite.Mailers;
+    using MarketingWebsite.Enums;
 
     public class UsersController : ApiController
     {
@@ -38,10 +39,32 @@ namespace MarketingWebsite.Api
                                                 Id = x.UserId,
                                                 FirstName = x.FirstName, 
                                                 Surname = x.Surname,
-                                                EmailAddress = accountService.GetUserById(x.UserId).Email
+                                                EmailAddress = accountService.GetUserById(x.UserId).Email,
                                             }
                                         );
 
+            }
+        }
+
+        [HttpGet]
+        public UserViewModel GetLoggedInUser()
+        {
+            using (var ctx = new EriskDatabase())
+            {
+                var membershipUser = accountService.LoggedInUser();
+
+                var userId =  new Guid(membershipUser.Identity.Name);
+
+                return ctx.Users.Where(x => x.UserId == userId).ToList().Select(x => new UserViewModel
+                {
+                    Id = x.UserId,
+                    FirstName = x.FirstName,
+                    Surname = x.Surname,
+                    JobTitle = x.JobTitle,
+                    IsLoggedInUser = isLoggedInUser(x),
+                    EmailAddress = accountService.GetUserById(x.UserId).Email,
+                    IsAdminUser = this.accountService.IsUserAdministrator()
+                }).FirstOrDefault();
             }
         }
 

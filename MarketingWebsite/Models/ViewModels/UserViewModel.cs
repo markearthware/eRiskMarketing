@@ -20,5 +20,7 @@ namespace MarketingWebsite.Models.ViewModels
         public bool IsLoggedInUser { get; set; }
 
         public string AssignedDatabase { get; set; }
+
+        public bool IsAdminUser { get; set; }
     }
 }

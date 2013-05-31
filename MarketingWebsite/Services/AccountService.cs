@@ -180,5 +180,13 @@ namespace MarketingWebsite.Services
         {
             return HttpContext.Current.User;
         }
+
+        public bool IsUserAdministrator()
+        {
+            var loggedInUser = this.LoggedInUser();
+
+            return loggedInUser.IsInRole(MembershipRoles.CompanyAdministrator.ToString())
+                || loggedInUser.IsInRole(MembershipRoles.Administrator.ToString());
+        }
     }
 }
