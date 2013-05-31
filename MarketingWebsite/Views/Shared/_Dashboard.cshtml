@@ -22,12 +22,9 @@
                         <li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders">Orders</a></li>
                         <li data-ng-class="{'active':getClass('/users')}"><a href="#/users">Users</a></li>
                     </ul>
-                    
-                    @*<div class="logged-in-user">
-                        Logged in as {{ loggedInUser.EmailAddress }} 
-                    </div>*@
+
                     <ul class="nav pull-right">
-                        <li><a href="" ng-click="goToMyAccount()">My Account</a></li>
+                        <li><a href="" title="Logged in as {{ loggedInUser.EmailAddress }}" ng-click="goToMyAccount()">My Account</a></li>
                         <li>@Html.ActionLink("Log out", "LogOut")</li>
                     </ul>
                 </div>
