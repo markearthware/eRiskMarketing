@@ -86,3 +86,4 @@ C:\git\eRiskMarketing\MarketingWebsite\bin\log4net.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\Castle.Facilities.Logging.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\log4net.xml
 C:\git\eRiskMarketing\MarketingWebsite\obj\Debug\MarketingWebsite.csprojResolveAssemblyReference.cache
+C:\git\eRiskMarketing\MarketingWebsite\bin\Mvc.Mailer.dll

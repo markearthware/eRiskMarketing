@@ -46,7 +46,16 @@
     };
 
     $scope.resetUsersPassword = function () {
-        // http PUT
-        alert("reset password");
+        // http GET
+        $http({
+            method: 'GET',
+            url: 'api/users/ResetUsersPassword/' + $routeParams.id
+        }).success(function (data, status, headers, config) {
+            $scope.deleteAlerts();
+            $scope.addAlert("success", "The user has been sent an email containing a new password");
+        }).error(function (data, status, headers, config) {
+            $scope.deleteAlerts();
+            $scope.addAlert("error", "An unexpected error has occurred, please try again later");
+        });
     };
 });

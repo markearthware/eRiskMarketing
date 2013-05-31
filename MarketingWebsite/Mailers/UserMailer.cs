@@ -9,25 +9,14 @@ namespace MarketingWebsite.Mailers
 			MasterName="_Layout";
 		}
 		
-		public virtual MvcMailMessage Welcome()
+		public virtual MvcMailMessage NewPassword(string newPassword, string emailAddress)
 		{
-			//ViewBag.Data = someObject;
+			ViewBag.NewPassword = newPassword;
 			return Populate(x =>
 			{
-				x.Subject = "Welcome";
-				x.ViewName = "Welcome";
-				x.To.Add("some-email@example.com");
-			});
-		}
- 
-		public virtual MvcMailMessage GoodBye()
-		{
-			//ViewBag.Data = someObject;
-			return Populate(x =>
-			{
-				x.Subject = "GoodBye";
-				x.ViewName = "GoodBye";
-				x.To.Add("some-email@example.com");
+				x.Subject = "New Password";
+				x.ViewName = "NewPassword";
+				x.To.Add(emailAddress);
 			});
 		}
  	}

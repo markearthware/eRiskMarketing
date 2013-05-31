@@ -13,14 +13,19 @@ namespace MarketingWebsite.Api
     using MarketingWebsite.Models.ViewModels;
     using MarketingWebsite.Services.Interfaces;
     using MarketingWebsite.Models.FormModels;
+    using MarketingWebsite.Services;
+    using MarketingWebsite.Mailers;
 
     public class UsersController : ApiController
     {
         private readonly IAccountService accountService;
 
+        private readonly IUserMailer emailService;
+
         public UsersController(IAccountService accountService)
         {
             this.accountService = accountService;
+            this.emailService = new UserMailer();
         }
 
         [HttpGet]
@@ -118,12 +123,21 @@ namespace MarketingWebsite.Api
             }
         }
 
-        [HttpPut]
+        [HttpGet]
         public HttpResponseMessage ResetUsersPassword(Guid Id)
         {
-            var newPassword = this.accountService.ResetUsersPassword(Id);
-
-            return null;
+            try
+            {
+                var newPassword = this.accountService.ResetUsersPassword(Id);
+                var emailAddress = this.accountService.GetUserById(Id).Email;
+                this.emailService.NewPassword(newPassword, emailAddress).Send();
+                
+                return this.Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }
         }
 
         private bool isLoggedInUser(User user)

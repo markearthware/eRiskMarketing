@@ -11,6 +11,7 @@ using MarketingWebsite.Enums;
 using MarketingWebsite.Services.Interfaces;
 using System.Web;
 using System.Security.Principal;
+using System.Text.RegularExpressions;
 
 namespace MarketingWebsite.Services
 {
@@ -124,7 +125,14 @@ namespace MarketingWebsite.Services
         {
             var user = this.GetUserById(userId);
             var newPassword = user.ResetPassword();
-            return newPassword;
+
+            //generate easier to type password 
+            var alteredPassword = Guid.NewGuid().ToString("N").Substring(0, 8); 
+
+            //set altered password as current password
+            user.ChangePassword(newPassword, alteredPassword);
+
+            return alteredPassword;
         }
 
         public bool ChangeEmailAddress(Guid userId, string newEmailAddress)

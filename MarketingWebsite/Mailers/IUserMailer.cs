@@ -4,7 +4,6 @@ namespace MarketingWebsite.Mailers
 { 
     public interface IUserMailer
     {
-			MvcMailMessage Welcome();
-			MvcMailMessage GoodBye();
+        MvcMailMessage NewPassword(string newPassword, string emailAddress);
 	}
 }
