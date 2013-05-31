@@ -35,7 +35,9 @@
                     </div>
 
                     <div data-ng-show="user.IsLoggedInUser">
-                        
+                        <hr />
+                        <h5>Reset your password</h5>
+                     
                         <div class="control-group">
                             <label class="control-label" for="oldPassword">Old Password</label>
                             <div class="controls row-fluid">
@@ -46,14 +48,14 @@
                         <div class="control-group">
                             <label class="control-label" for="newPassword">New Password</label>
                             <div class="controls row-fluid">
-                                <input type="password" name="newPassword" data-ng-model="user.NewPassword" class="span8" />
+                                <input type="password" name="NewPassword" id="NewPassword" data-ng-model="user.NewPassword" class="span8" />
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" for="confirmNewPassword">Confirm New Password</label>
                             <div class="controls row-fluid">
-                                <input type="password" name="confirmNewPassword" data-ng-model="user.NewPasswordConfirm" class="span8" />
+                                <input type="password" name="NewPasswordConfirm" id="NewPasswordConfirm" repeat-password="NewPassword" data-ng-model="user.NewPasswordConfirm" class="span8" />
                             </div>
                         </div>
                     </div>
@@ -66,7 +68,8 @@
                         <div class="controls row-fluid">
                             <div class="span12">
                                 <button class="btn" data-ng-click="returnToList()"><i class="icon-remove-sign"></i> Return to List</button>
-                                <button type="submit" class="btn" data-ng-click="updateUser()"><i class="icon-ok"></i> Save</button>
+                                <button class="btn" ng-show="!user.IsLoggedInUser" data-ng-click="resetUsersPassword()"><i class="icon-envelope"></i> Reset user's password</button>
+                                <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" data-ng-click="updateUser()"><i class="icon-ok"></i> Save</button>
                             </div>
                         </div>
                     </div>

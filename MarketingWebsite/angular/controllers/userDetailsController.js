@@ -30,24 +30,23 @@
     };
 
     $scope.updateUser = function () {
-        if ($scope.user.NewPasswordConfirm == $scope.user.NewPassword) {
-            $http({
-                method: 'PUT',
-                url: 'api/users/update/',
-                data: $scope.user
-            }).success(function (data, status, headers, config) {
-                $scope.deleteAlerts();
-                $scope.addAlert("success", "The user has been updated successfully");
-            }).error(function (data, status, headers, config) {
-                $scope.deleteAlerts();
-                for (var i = 0; i < data.length; i++) {
-                    $scope.addAlert("error", data[i]);
-                }
-            });
-        }
-        else {
+        $http({
+            method: 'PUT',
+            url: 'api/users/update/',
+            data: $scope.user
+        }).success(function (data, status, headers, config) {
             $scope.deleteAlerts();
-            $scope.addAlert("error", "Password does not match the confirmed new password");
-        }
+            $scope.addAlert("success", "The user has been updated successfully");
+        }).error(function (data, status, headers, config) {
+            $scope.deleteAlerts();
+            for (var i = 0; i < data.length; i++) {
+                $scope.addAlert("error", data[i]);
+            }
+        });
+    };
+
+    $scope.resetUsersPassword = function () {
+        // http PUT
+        alert("reset password");
     };
 });

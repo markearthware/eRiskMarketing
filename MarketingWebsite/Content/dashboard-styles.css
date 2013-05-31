@@ -92,3 +92,8 @@ footer {
 {
     margin-left: 0px !important;
 }
+
+input.ng-invalid-repeat
+{
+    border: 1px solid red;
+}

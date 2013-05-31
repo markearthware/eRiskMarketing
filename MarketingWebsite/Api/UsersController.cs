@@ -78,7 +78,7 @@ namespace MarketingWebsite.Api
                     if (accountService.IsUserAuthenticated(user.EmailAddress, user.OldPassword))
                     {
                         // attempt to change password 
-                        accountService.ResetPassword(user.OldPassword, user.NewPassword);
+                        accountService.ResetLoggedInUsersPassword(user.OldPassword, user.NewPassword);
                         resetPasswordSuccess = true;
                     }
                     else
@@ -116,6 +116,14 @@ namespace MarketingWebsite.Api
                     return this.Request.CreateResponse(HttpStatusCode.Forbidden, messages);
                 }
             }
+        }
+
+        [HttpPut]
+        public HttpResponseMessage ResetUsersPassword(Guid Id)
+        {
+            var newPassword = this.accountService.ResetUsersPassword(Id);
+
+            return null;
         }
 
         private bool isLoggedInUser(User user)

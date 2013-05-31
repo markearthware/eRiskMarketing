@@ -20,7 +20,7 @@ namespace MarketingWebsite.Models.FormModels
 
         [Required]
         [Display(Name = "Password Confirmation")]
-        [Compare("Password")]
+        [System.ComponentModel.DataAnnotations.Compare("Password")]
         public string PasswordConfirm { get; set; }
 
         [Required]

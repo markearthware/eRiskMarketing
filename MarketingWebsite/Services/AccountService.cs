@@ -113,11 +113,18 @@ namespace MarketingWebsite.Services
             return users[Id.ToString()];
         }
 
-        public bool ResetPassword(string oldPassword, string newPassword)
+        public bool ResetLoggedInUsersPassword(string oldPassword, string newPassword)
         {
             var user = Membership.GetUser();
             user.ChangePassword(oldPassword, newPassword);
             return true;
+        }
+
+        public string ResetUsersPassword(Guid userId)
+        {
+            var user = this.GetUserById(userId);
+            var newPassword = user.ResetPassword();
+            return newPassword;
         }
 
         public bool ChangeEmailAddress(Guid userId, string newEmailAddress)

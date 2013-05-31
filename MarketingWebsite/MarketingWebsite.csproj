@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MarketingWebsite</RootNamespace>
     <AssemblyName>MarketingWebsite</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -216,7 +216,9 @@
     <Compile Include="Plumbing\WindsorDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\EmailService.cs" />
     <Compile Include="Services\Interfaces\IAccountService.cs" />
+    <Compile Include="Services\Interfaces\IEmailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="angular\app.js" />
@@ -225,12 +227,13 @@
     <Content Include="angular\controllers\userDetailsController.js" />
     <Content Include="angular\controllers\usersController.js" />
     <Content Include="angular\directives\animatedView.js" />
+    <Content Include="angular\directives\repeatPassword.js" />
     <Content Include="angular\partials\customerOrders.html" />
     <Content Include="angular\partials\customers.html" />
     <Content Include="angular\partials\orders.html" />
     <Content Include="angular\partials\ordersTable.html" />
     <Content Include="angular\partials\users.html" />
-    <Content Include="angular\services\alertService.js" />
+    <Content Include="angular\services\services.js" />
     <Content Include="angular\services\customersService.js" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />

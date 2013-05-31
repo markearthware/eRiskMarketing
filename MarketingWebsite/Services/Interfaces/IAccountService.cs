@@ -26,7 +26,9 @@ namespace MarketingWebsite.Services.Interfaces
 
         MembershipUser GetUserById(Guid Id);
 
-        bool ResetPassword(string oldPassword, string newPassword);
+        bool ResetLoggedInUsersPassword(string oldPassword, string newPassword);
+
+        string ResetUsersPassword(Guid userId);
 
         bool ChangeEmailAddress(Guid UserId, string newEmailAddress);
     }

@@ -74,7 +74,6 @@ C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.WebPages.Razor.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\WebMatrix.Data.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\Microsoft.Web.WebPages.OAuth.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\WebMatrix.WebData.xml
-C:\git\eRiskMarketing\MarketingWebsite\obj\Debug\ResolveAssemblyReference.cache
 C:\git\eRiskMarketing\MarketingWebsite\obj\Debug\MarketingWebsite.dll
 C:\git\eRiskMarketing\MarketingWebsite\obj\Debug\MarketingWebsite.pdb
 C:\git\eRiskMarketing\MarketingWebsite\bin\Castle.Core.dll
@@ -86,3 +85,4 @@ C:\git\eRiskMarketing\MarketingWebsite\bin\Castle.Services.Logging.Log4netIntegr
 C:\git\eRiskMarketing\MarketingWebsite\bin\log4net.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\Castle.Facilities.Logging.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\log4net.xml
+C:\git\eRiskMarketing\MarketingWebsite\obj\Debug\MarketingWebsite.csprojResolveAssemblyReference.cache
