@@ -203,6 +203,7 @@
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Control.cs" />
     <Compile Include="Models\DatabaseContext\EriskDatabase.cs" />
+    <Compile Include="Models\FormModels\AddUserFormModel.cs" />
     <Compile Include="Models\FormModels\LoginFormModel.cs" />
     <Compile Include="Models\FormModels\RegisterFormModel.cs" />
     <Compile Include="Models\FormModels\UserFormModel.cs" />
@@ -230,11 +231,13 @@
   <ItemGroup>
     <Content Include="angular\app.js" />
     <Content Include="angular\controllers\controllers.js" />
+    <Content Include="angular\controllers\userAddController.js" />
     <Content Include="angular\controllers\rootController.js" />
     <Content Include="angular\controllers\userDetailsController.js" />
     <Content Include="angular\controllers\usersController.js" />
     <Content Include="angular\directives\animatedView.js" />
     <Content Include="angular\directives\repeatPassword.js" />
+    <Content Include="angular\partials\userAdd.html" />
     <Content Include="angular\partials\customerOrders.html" />
     <Content Include="angular\partials\customers.html" />
     <Content Include="angular\partials\orders.html" />

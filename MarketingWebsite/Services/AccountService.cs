@@ -12,12 +12,20 @@ using MarketingWebsite.Services.Interfaces;
 using System.Web;
 using System.Security.Principal;
 using System.Text.RegularExpressions;
+using MarketingWebsite.Mailers;
 
 namespace MarketingWebsite.Services
 {
     public class AccountService : IAccountService
     {
-        public void CreateUser(RegisterFormModel formModel, MembershipRoles selectedRole)
+        private readonly UserMailer emailService;
+
+        public AccountService()
+        {
+            this.emailService = new UserMailer();
+        }
+
+        public void CreateUserFromRegisterForm(RegisterFormModel formModel, MembershipRoles selectedRole)
         {
             var dal = new EriskDatabase();
 
@@ -27,19 +35,8 @@ namespace MarketingWebsite.Services
             if (company == null)
             {
                 var userId = Guid.NewGuid();
-                
-                MembershipCreateStatus status;
-                // create membership user
-                var membershipUser = Membership.CreateUser(userId.ToString(), formModel.Password, formModel.EmailAddress, "THING", "THING", true, out status);
-               
 
-                // add user to Company Admin Role
-                if (!Roles.RoleExists(selectedRole.ToString())){
-                    Roles.CreateRole(selectedRole.ToString());
-                }
-
-                // add user to role
-                Roles.AddUserToRole(userId.ToString(), selectedRole.ToString());
+                this.CreateMembershipUser(userId.ToString(), formModel.EmailAddress, formModel.Password, selectedRole);
 
                 // create company
                 var newCompany = new Company
@@ -70,6 +67,41 @@ namespace MarketingWebsite.Services
             {
                 throw new CompanyExistsException();
             }
+        }
+
+        private void CreateMembershipUser(string userId, string emailAddress, string password, MembershipRoles selectedRole)
+        {
+            MembershipCreateStatus status;
+            // create membership user
+            var membershipUser = Membership.CreateUser(userId.ToString(), password, emailAddress, "THING", "THING", true, out status);
+
+            if (status != MembershipCreateStatus.Success)
+            {
+                throw new Exception();
+            }
+
+            // add user to Company Admin Role
+            if (!Roles.RoleExists(selectedRole.ToString()))
+            {
+                Roles.CreateRole(selectedRole.ToString());
+            }
+
+            // add user to role
+            Roles.AddUserToRole(userId.ToString(), selectedRole.ToString());
+        }
+
+        public void CreateMembershipUserFromAngularApp(string userId, string emailAddress, MembershipRoles selectedRole)
+        {
+            var password = this.GeneratePassword();
+
+            CreateMembershipUser(userId, emailAddress, password, selectedRole);
+
+            this.emailService.NewPassword(password, emailAddress).Send();
+        }
+
+        private string GeneratePassword()
+        {
+            return Guid.NewGuid().ToString().Replace("-", string.Empty).Substring(0, 8);
         }
 
         public void LogUserIn(LoginFormModel formModel)
@@ -124,6 +156,7 @@ namespace MarketingWebsite.Services
         public string ResetUsersPassword(Guid userId)
         {
             var user = this.GetUserById(userId);
+            
             var newPassword = user.ResetPassword();
 
             //generate easier to type password 

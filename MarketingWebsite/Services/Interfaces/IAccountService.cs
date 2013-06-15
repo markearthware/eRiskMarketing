@@ -14,7 +14,9 @@ namespace MarketingWebsite.Services.Interfaces
 {
     public interface IAccountService
     {
-        void CreateUser(RegisterFormModel formModel, MembershipRoles selectedRole);
+        void CreateUserFromRegisterForm(RegisterFormModel formModel, MembershipRoles selectedRole);
+
+        void CreateMembershipUserFromAngularApp(string userId, string emailAddress, MembershipRoles selectedRole);
 
         void LogUserIn(LoginFormModel formModel);
 

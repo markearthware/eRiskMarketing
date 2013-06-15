@@ -54,6 +54,12 @@ app.config(function ($routeProvider) {
                 templateUrl: '/angular/partials/userDetail.html'
             })
 
+        .when('/useradd/',
+            {
+                controller: 'UserAddController',
+                templateUrl: '/angular/partials/userAdd.html'
+            })
+
         .otherwise({ redirectTo: '/customers' });
 });
 

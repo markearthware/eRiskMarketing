@@ -146,6 +146,39 @@ namespace MarketingWebsite.Api
             }
         }
 
+        [HttpPost]
+        public HttpResponseMessage Add(AddUserFormModel user)
+        {
+            try
+            {
+                using (var ctx = new EriskDatabase())
+                {
+                    var userId = Guid.NewGuid();
+
+                    this.accountService.CreateMembershipUserFromAngularApp(userId.ToString(), user.EmailAddress, user.MembershipRole);
+
+                    var loggedInUserGuid = Guid.Parse(accountService.LoggedInUser().Identity.Name);
+
+                    var dbUser = ctx.Users.Add(
+                        new User
+                        {
+                            UserId = userId,
+                            FirstName = user.FirstName,
+                            Surname = user.Surname,
+                            JobTitle = user.JobTitle,
+                            Company = ctx.Users.Where(x => x.UserId == loggedInUserGuid).FirstOrDefault().Company
+                        });
+
+                    ctx.SaveChanges();
+                    return this.Request.CreateResponse(HttpStatusCode.OK);
+                }
+            }
+            catch (Exception)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }
+        }
+
         [HttpGet]
         public HttpResponseMessage ResetUsersPassword(Guid Id)
         {

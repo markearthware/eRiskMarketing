@@ -5,6 +5,10 @@
         $location.path("/userdetail/" + id);
     };
 
+    $scope.createUserAccount = function () {
+        $location.path("/useradd/");
+    };
+
     $http({
         method: 'GET',
         url: 'api/users/get/'

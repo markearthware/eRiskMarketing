@@ -1,7 +1,7 @@
 ﻿<div class="view">
     <div class="container">
         <div class="row-fluid">
-            <h3>User Details</h3>
+            <h3>Add a new user</h3>
         </div>
         <form name="userForm" class="ng-cloak">
             <fieldset>
@@ -9,7 +9,7 @@
                     <div class="control-group">
                         <label class="control-label" for="emailAddress">Email Address</label>
                         <div class="controls row-fluid">
-                            <input required type="text" name="emailAddress" data-ng-model="user.EmailAddress" class="span8" />
+                            <input required type="email" name="emailAddress" data-ng-model="user.EmailAddress" class="span8" />
                         </div>
                     </div>
 
@@ -34,29 +34,13 @@
                         </div>
                     </div>
 
-                    <div data-ng-show="user.IsLoggedInUser">
-                        <hr />
-                        <h5>Reset your password</h5>
-                     
-                        <div class="control-group">
-                            <label class="control-label" for="oldPassword">Old Password</label>
-                            <div class="controls row-fluid">
-                                <input type="password" name="oldPassword" data-ng-model="user.OldPassword" class="span8" />
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <label class="control-label" for="newPassword">New Password</label>
-                            <div class="controls row-fluid">
-                                <input type="password" name="NewPassword" id="NewPassword" data-ng-model="user.NewPassword" class="span8" />
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <label class="control-label" for="confirmNewPassword">Confirm New Password</label>
-                            <div class="controls row-fluid">
-                                <input type="password" name="NewPasswordConfirm" id="NewPasswordConfirm" repeat-password="NewPassword" data-ng-model="user.NewPasswordConfirm" class="span8" />
-                            </div>
+                    <div class="control-group">
+                        <label class="control-label" for="jobTitle">User Privileges</label>
+                        <div class="controls row-fluid">
+                            <select class="span8" ng-model="user.MembershipRole" required>
+                              <option value="User">User</option>
+                              <option value="CompanyAdministrator">Administrator</option>
+                            </select>
                         </div>
                     </div>
 
@@ -67,9 +51,8 @@
                     <div class="control-group">
                         <div class="controls row-fluid">
                             <div class="span12">
-                                <button class="btn" ng-show="loggedInUser.IsAdminUser" data-ng-click="returnToList()"><i class="icon-remove-sign"></i> Return to List</button>
-                                <button class="btn" ng-show="!user.IsLoggedInUser" data-ng-click="resetUsersPassword()"><i class="icon-envelope"></i> Reset user's password</button>
-                                <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" data-ng-click="updateUser()"><i class="icon-ok"></i> Save</button>
+                                <button class="btn" data-ng-click="returnToList()"><i class="icon-remove-sign"></i> Return to List</button>
+                                <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" data-ng-click="addUser()"><i class="icon-ok"></i> Submit</button>
                             </div>
                         </div>
                     </div>

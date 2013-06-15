@@ -35,7 +35,7 @@ namespace MarketingWebsite.Controllers
             {
                 try
                 {
-                    this.accountService.CreateUser(formModel, MembershipRoles.CompanyAdministrator);
+                    this.accountService.CreateUserFromRegisterForm(formModel, MembershipRoles.CompanyAdministrator);
                     this.accountService.LogUserIn(formModel);
                     return RedirectToAction("Index", "Dashboard");
                 }
