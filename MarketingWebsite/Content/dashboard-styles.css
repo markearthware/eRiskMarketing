@@ -97,3 +97,8 @@ input.ng-invalid-repeat
 {
     border: 1px solid red;
 }
+
+.viewUser
+{
+    cursor:pointer;
+}

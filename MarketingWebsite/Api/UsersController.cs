@@ -17,6 +17,7 @@ namespace MarketingWebsite.Api
     using MarketingWebsite.Mailers;
     using MarketingWebsite.Enums;
     using MarketingWebsite.CustomExceptions;
+    using System.Web.Security;
 
     public class UsersController : ApiController
     {
@@ -66,6 +67,7 @@ namespace MarketingWebsite.Api
                     // membership changes 
                     var membershipUser = accountService.GetUserById(Id);
                     membershipUser.IsApproved = false;
+                    Membership.UpdateUser(membershipUser);
 
                     ctx.SaveChanges();
 
