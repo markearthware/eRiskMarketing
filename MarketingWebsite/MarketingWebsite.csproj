@@ -189,6 +189,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="CustomExceptions\CompanyExistsException.cs" />
+    <Compile Include="CustomExceptions\UserException.cs" />
     <Compile Include="Enums\MembershipRoles.cs" />
     <Compile Include="FormModels\ContactUsFormModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -203,7 +204,6 @@
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Control.cs" />
     <Compile Include="Models\DatabaseContext\EriskDatabase.cs" />
-    <Compile Include="Models\FormModels\AddUserFormModel.cs" />
     <Compile Include="Models\FormModels\LoginFormModel.cs" />
     <Compile Include="Models\FormModels\RegisterFormModel.cs" />
     <Compile Include="Models\FormModels\UserFormModel.cs" />

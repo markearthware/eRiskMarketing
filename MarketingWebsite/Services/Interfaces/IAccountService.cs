@@ -28,6 +28,10 @@ namespace MarketingWebsite.Services.Interfaces
 
         MembershipUser GetUserById(Guid Id);
 
+        MembershipRoles GetUserRole(Guid Id);
+
+        void ChangeRole(Guid userId, MembershipRoles newRole);
+
         bool ResetLoggedInUsersPassword(string oldPassword, string newPassword);
 
         string ResetUsersPassword(Guid userId);

@@ -43,6 +43,10 @@ namespace MarketingWebsite.Controllers
                 {
                     tempDataErrorMessage = formModel.CompanyName + " has already been added into the system, contact your health and safety manager for login details";
                 }
+                catch (UserException ex)
+                {
+                    tempDataErrorMessage = formModel.EmailAddress + " is already being used, please use a different email address";
+                }
                 catch (Exception ex)
                 {
                     tempDataErrorMessage = "An error has occured, please try again";

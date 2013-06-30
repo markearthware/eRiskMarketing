@@ -15,7 +15,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <a class="brand " href="#/">
-                        <img src="Content/Images/people.png" alt="logo"> Dashboard
+                        <img src="Content/Images/people.png" alt="logo">{{ loggedInUser.CompanyName }} Dashboard
                     </a>
                     <ul class="nav nav-pills" data-ng-controller="NavbarController">
                         <li data-ng-class="{'active':getClass('/customers')}"><a href="#/customers">Customers</a></li>

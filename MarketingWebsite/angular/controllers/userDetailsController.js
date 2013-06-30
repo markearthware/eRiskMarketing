@@ -9,7 +9,8 @@
         IsLoggedInUser: '',
         OldPassword: '',
         NewPassword: '',
-        NewPasswordConfirm: ''
+        NewPasswordConfirm: '',
+        MembershipRole: ''
     };
 
     // methods

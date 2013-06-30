@@ -77,7 +77,7 @@ namespace MarketingWebsite.Services
 
             if (status != MembershipCreateStatus.Success)
             {
-                throw new Exception();
+                throw new UserException();
             }
 
             // add user to Company Admin Role
@@ -93,9 +93,7 @@ namespace MarketingWebsite.Services
         public void CreateMembershipUserFromAngularApp(string userId, string emailAddress, MembershipRoles selectedRole)
         {
             var password = this.GeneratePassword();
-
             CreateMembershipUser(userId, emailAddress, password, selectedRole);
-
             this.emailService.NewPassword(password, emailAddress).Send();
         }
 
@@ -144,6 +142,23 @@ namespace MarketingWebsite.Services
         {
             var users = Membership.GetAllUsers();
             return users[Id.ToString()];
+        }
+
+        public MembershipRoles GetUserRole(Guid Id)
+        {
+            var user = GetUserById(Id);
+            var rolesForUser = Roles.GetRolesForUser(user.UserName);
+
+            return (MembershipRoles)Enum.Parse(typeof(MembershipRoles), rolesForUser.FirstOrDefault());
+        }
+
+        public void ChangeRole(Guid userId, MembershipRoles newRole)
+        {
+            var currentRole = GetUserRole(userId).ToString();
+            var username = GetUserById(userId).UserName;
+            Roles.RemoveUserFromRole(username, currentRole);
+
+            Roles.AddUserToRole(username, newRole.ToString());
         }
 
         public bool ResetLoggedInUsersPassword(string oldPassword, string newPassword)

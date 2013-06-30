@@ -34,6 +34,16 @@
                         </div>
                     </div>
 
+                    <div class="control-group">
+                        <label class="control-label" for="jobTitle">User Privileges</label>
+                        <div class="controls row-fluid">
+                            <select class="span8" ng-model="user.MembershipRole" required>
+                              <option value="0">User</option>
+                              <option value="1">Administrator</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div data-ng-show="user.IsLoggedInUser">
                         <hr />
                         <h5>Reset your password</h5>
