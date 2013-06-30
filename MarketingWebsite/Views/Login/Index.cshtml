@@ -6,6 +6,11 @@
 
 <h2>Login</h2>
 
+@if (TempData["ErrorMessage"] != null)
+{
+    @TempData["ErrorMessage"].ToString();
+} 
+
 @using (Html.BeginForm("Index", "Login", new { returnUrl = Request.QueryString["returnUrl"] }, FormMethod.Post, new { @class = "register-form" }))
 {                                               
     <fieldset>

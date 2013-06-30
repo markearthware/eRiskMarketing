@@ -26,6 +26,7 @@ namespace MarketingWebsite.Controllers
         [HttpPost]
         public ActionResult Index(LoginFormModel formModel)
         {
+            var tempDataErrorMessage = string.Empty;
             if (this.ModelState.IsValid)
             {
                 try
@@ -34,10 +35,11 @@ namespace MarketingWebsite.Controllers
                 }
                 catch (Exception)
                 {
+                    tempDataErrorMessage = "The username or password was incorrect. Please try again.";
+                    TempData["ErrorMessage"] = tempDataErrorMessage;
                     return RedirectToAction("Index");
                 }
 
-                // todo if not in administrator role go to "UserDashboard"
                 return RedirectToAction("Index", "Dashboard");
             }
             else
