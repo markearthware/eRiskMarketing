@@ -1,0 +1,1 @@
+C:\git\eRiskMarketing\eRiskAssessment.Services\obj\Release\eRiskAssessment.Services.csprojResolveAssemblyReference.cache

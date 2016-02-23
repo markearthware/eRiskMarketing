@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>996cc9dc-ba8f-4aaf-9521-dc4386d3b107</ProjectGuid>
+    <ProjectGuid>{39AE8E82-5B93-439B-ADE6-9B3E7B0F6B43}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>eRiskAssessment.Services</RootNamespace>

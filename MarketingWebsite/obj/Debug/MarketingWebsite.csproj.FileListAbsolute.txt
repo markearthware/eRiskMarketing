@@ -47,11 +47,8 @@ C:\git\eRiskMarketing\MarketingWebsite\bin\Microsoft.Web.Infrastructure.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\Newtonsoft.Json.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.dll
-C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.Formatting.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.WebRequest.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Helpers.dll
-C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Http.dll
-C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Http.WebHost.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Mvc.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Razor.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.WebPages.Deployment.dll
@@ -61,11 +58,8 @@ C:\git\eRiskMarketing\MarketingWebsite\bin\WebMatrix.Data.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\WebMatrix.WebData.dll
 C:\git\eRiskMarketing\MarketingWebsite\bin\Newtonsoft.Json.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.Formatting.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.WebRequest.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Helpers.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Http.xml
-C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Http.WebHost.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Mvc.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Razor.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.WebPages.xml

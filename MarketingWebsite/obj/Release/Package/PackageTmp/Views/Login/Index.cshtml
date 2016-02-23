@@ -1,0 +1,32 @@
+﻿@model MarketingWebsite.Models.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RegisterAndLogin.cshtml";
+}
+
+<h2>Login</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    @TempData["ErrorMessage"].ToString();
+} 
+
+@using (Html.BeginForm("Index", "Login", new { returnUrl = Request.QueryString["returnUrl"] }, FormMethod.Post, new { @class = "register-form" }))
+{                                               
+    <fieldset>
+        <p>
+            @Html.LabelFor(x => x.FormModel.EmailAddress)
+            @Html.TextBoxFor(x => x.FormModel.EmailAddress)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.FormModel.Password)
+            @Html.PasswordFor(x => x.FormModel.Password)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.FormModel.RememberMe)
+            @Html.CheckBoxFor(x => x.FormModel.RememberMe)
+        </p>
+                
+        <input type="submit" value="Log in"/>
+    </fieldset>
+}

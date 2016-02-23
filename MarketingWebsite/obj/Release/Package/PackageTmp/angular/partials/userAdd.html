@@ -1,0 +1,67 @@
+﻿<div class="view">
+    <div class="container">
+        <div class="row-fluid">
+            <h3>Add a new user</h3>
+        </div>
+        <form name="userForm" class="ng-cloak">
+            <fieldset>
+                <div class="row-fluid">
+                    <div class="control-group">
+                        <label class="control-label" for="emailAddress">Email Address</label>
+                        <div class="controls row-fluid">
+                            <input required type="email" name="emailAddress" data-ng-model="user.EmailAddress" class="span8" />
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="firstName">First Name</label>
+                        <div class="controls row-fluid">
+                            <input required type="text" name="firstName" data-ng-model="user.FirstName" class="span8" />
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="lastName">Last Name</label>
+                        <div class="controls row-fluid">
+                            <input required type="text" name="lastName" data-ng-model="user.Surname" class="span8" />
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="jobTitle">Job Title</label>
+                        <div class="controls row-fluid">
+                            <input type="text" name="jobTitle" data-ng-model="user.JobTitle" class="span8" />
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="jobTitle">User Privileges</label>
+                        <div class="controls row-fluid">
+                            <select class="span8" ng-model="user.MembershipRole" required>
+                              <option value="0">User</option>
+                              <option value="1">Administrator</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="controls row-fluid">
+                        &nbsp;
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls row-fluid">
+                            <div class="span12">
+                                <button class="btn" data-ng-click="returnToList()"><i class="icon-remove-sign"></i> Return to List</button>
+                                <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" data-ng-click="addUser()"><i class="icon-ok"></i> Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span12 alert-container">
+                        <alert class="alert" close="closeAlert($index)" ng-repeat="alert in alerts" type="alert.type">{{ alert.msg }}</alert>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>      
+    </div>
+</div>

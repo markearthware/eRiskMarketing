@@ -33,9 +33,9 @@ namespace MarketingWebsite.Controllers
                 {
                     this.accountService.LogUserIn(formModel);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    tempDataErrorMessage = "The username or password was incorrect. Please try again.";
+                    tempDataErrorMessage = "The username or password was incorrect. Please try again. " + e.Message;
                     TempData["ErrorMessage"] = tempDataErrorMessage;
                     return RedirectToAction("Index");
                 }
