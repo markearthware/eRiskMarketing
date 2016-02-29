@@ -18,6 +18,7 @@ namespace MarketingWebsite.Api
     using MarketingWebsite.Enums;
     using MarketingWebsite.CustomExceptions;
     using System.Web.Security;
+    using System.Net.Mail;
 
     public class UsersController : ApiController
     {
@@ -193,28 +194,44 @@ namespace MarketingWebsite.Api
                 {
                     var userId = Guid.NewGuid();
 
-                    this.accountService.CreateMembershipUserFromAngularApp(userId.ToString(), user.EmailAddress, user.MembershipRole);
+                    try
+                    {
+                        this.accountService.CreateMembershipUserFromAngularApp(userId.ToString(), user.EmailAddress, user.MembershipRole);
 
-                    var loggedInUserGuid = Guid.Parse(accountService.LoggedInUser().Identity.Name);
+                        var loggedInUserGuid = Guid.Parse(accountService.LoggedInUser().Identity.Name);
 
-                    var dbUser = ctx.Users.Add(
-                        new User
-                        {
-                            UserId = userId,
-                            FirstName = user.FirstName,
-                            Surname = user.Surname,
-                            JobTitle = user.JobTitle,
-                            Company = ctx.Users.Where(x => x.UserId == loggedInUserGuid).FirstOrDefault().Company
-                        });
+                        var dbUser = ctx.Users.Add(
+                            new User
+                            {
+                                UserId = userId,
+                                FirstName = user.FirstName,
+                                Surname = user.Surname,
+                                JobTitle = user.JobTitle,
+                                Company = ctx.Users.Where(x => x.UserId == loggedInUserGuid).FirstOrDefault().Company
+                            });
 
-                    ctx.SaveChanges();
-                    return this.Request.CreateResponse(HttpStatusCode.OK);
+                        ctx.SaveChanges();
+                        return this.Request.CreateResponse(HttpStatusCode.OK);
+                    }
+                    catch (SmtpException)
+                    {
+                        var messages = new List<string>();
+                        messages.Add(string.Format("SMTP error, please double check the email address", user.EmailAddress));
+                        return this.Request.CreateResponse(HttpStatusCode.Forbidden, messages);
+                    }
+                    
                 }
             }
             catch (UserException)
             {
                 var messages = new List<string>();
                 messages.Add(string.Format("{0} is already being used, please try a different email address", user.EmailAddress));
+                return this.Request.CreateResponse(HttpStatusCode.Forbidden, messages);
+            }
+            catch (Exception)
+            {
+                var messages = new List<string>();
+                messages.Add("Add unexplained error occurred.");
                 return this.Request.CreateResponse(HttpStatusCode.Forbidden, messages);
             }
         }

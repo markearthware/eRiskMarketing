@@ -13,6 +13,7 @@ using System.Web;
 using System.Security.Principal;
 using System.Text.RegularExpressions;
 using MarketingWebsite.Mailers;
+using System.Net.Mail;
 
 namespace MarketingWebsite.Services
 {
@@ -93,8 +94,9 @@ namespace MarketingWebsite.Services
         public void CreateMembershipUserFromAngularApp(string userId, string emailAddress, MembershipRoles selectedRole)
         {
             var password = this.GeneratePassword();
-            CreateMembershipUser(userId, emailAddress, password, selectedRole);
+
             this.emailService.NewPassword(password, emailAddress).Send();
+            CreateMembershipUser(userId, emailAddress, password, selectedRole);
         }
 
         private string GeneratePassword()

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="eriskdatabase-Web.config Connection String" description="eriskdatabase Connection String used in web.config by the application to access the database." defaultValue="Data Source=wxtleolr7g.database.windows.net,1433;Initial Catalog=EriskDatabase;Trusted_Connection=False;Persist Security Info=False;User ID=Erisk;Password=Ms110382" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\git\\eRiskMarketing\\MarketingWebsite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='eriskdatabase']/@connectionString" />
+  </parameter>
+</parameters>

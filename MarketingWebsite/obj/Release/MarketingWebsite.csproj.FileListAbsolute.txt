@@ -91,3 +91,9 @@ C:\git\eRiskMarketing\MarketingWebsite\bin\Castle.Facilities.Logging.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\Castle.Windsor.xml
 C:\git\eRiskMarketing\MarketingWebsite\bin\log4net.xml
 C:\git\eRiskMarketing\MarketingWebsite\obj\Release\MarketingWebsite.csprojResolveAssemblyReference.cache
+C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Http.WebHost.dll
+C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Http.WebHost.xml
+C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.Formatting.dll
+C:\git\eRiskMarketing\MarketingWebsite\bin\System.Net.Http.Formatting.xml
+C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Http.dll
+C:\git\eRiskMarketing\MarketingWebsite\bin\System.Web.Http.xml
